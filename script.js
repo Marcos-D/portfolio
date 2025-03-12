@@ -163,8 +163,13 @@ const videos = [
 
 let longestDuration = 0;
 
-// Find the longest video duration
+// Find the longest video duration and set video attributes
 videos.forEach(video => {
+    // Add muted attribute to allow autoplay
+    video.muted = true;
+    // Add playsinline for mobile devices
+    video.setAttribute('playsinline', '');
+    
     video.addEventListener('loadedmetadata', () => {
         if (video.duration > longestDuration) {
             longestDuration = video.duration;
@@ -177,9 +182,13 @@ function timeUpdateHandler() {
     const allFinished = videos.every(video => video.currentTime >= video.duration - 0.1);
     if (allFinished) {
         // Reset all videos to start
-        videos.forEach(video => {
+        videos.forEach(async video => {
             video.currentTime = 0;
-            video.play();
+            try {
+                await video.play();
+            } catch (error) {
+                console.warn('Video autoplay prevented:', error);
+            }
         });
     }
 }
@@ -225,25 +234,47 @@ projectCards.forEach(card => {
         // Initialize viewer if this is the physics card
         if (card === document.querySelector('.project-card:nth-child(2)')) {
             console.log('Initializing 3D viewer...');
-            setTimeout(() => {
+            setTimeout(async () => {
                 if (viewer) {
                     viewer.cleanup();
                     viewer = null;
                 }
                 try {
                     viewer = new ModelViewer('modelViewer');
-                    viewer.loadModel('assets/models/tifa_fbx.fbx');
+                    // Add error handling for model loading
+                    try {
+                        await viewer.loadModel('assets/models/tifa_fbx.fbx');
+                    } catch (modelError) {
+                        console.error('Error loading model:', modelError);
+                        // Try with explicit content type
+                        const modelResponse = await fetch('assets/models/tifa_fbx.fbx', {
+                            headers: {
+                                'Accept': 'application/octet-stream'
+                            }
+                        });
+                        const modelBlob = await modelResponse.blob();
+                        const modelUrl = URL.createObjectURL(modelBlob);
+                        await viewer.loadModel(modelUrl);
+                    }
                 } catch (error) {
                     console.error('Error initializing viewer:', error);
+                    const modelViewer = document.getElementById('modelViewer');
+                    if (modelViewer) {
+                        modelViewer.innerHTML = '<div style="color: var(--text-color); text-align: center; padding: 20px;">Error loading 3D model. Please try refreshing the page.</div>';
+                    }
                 }
             }, 100);
         }
 
         // Handle video synchronization for the pathfinding card
         if (card === document.querySelector('.project-card:nth-child(3)')) {
-            videos.forEach(video => {
+            videos.forEach(async video => {
                 video.currentTime = 0;
-                video.play();
+                try {
+                    await video.play();
+                } catch (error) {
+                    console.warn('Video autoplay prevented:', error);
+                }
                 video.addEventListener('timeupdate', timeUpdateHandler);
             });
         }
