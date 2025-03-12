@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#home">MARCOS<span class="accent"> DE LA TORRE</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1>Game Developer</h1>
+                <h2>Computer Engineering Student</h2>
+                <p>Crafting immersive digital experiences through code and creativity</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="primary-btn">View Projects</a>
+                    <a href="#contact" class="secondary-btn">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>class GameDev {
+  constructor() {
+    this.passion = "Creating Games";
+    this.favoriteShow = "Adventure Time!";
+    this.needsCoffee = true;
+  }
+  
+  myMission() {
+    return [
+      "Inspire Others",
+      "Build Worlds",
+      "I don't want to be a product of my environment. 
+        I want my environment to be a product of me." - Frank Costello 
+    ];
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content" data-aos="fade-up">
+            <div class="about-text">
+                <h3>A Journey Through Tech & Creativity</h3>
+                <div class="about-section">
+                    <h4>Early Curiosity & Hands-On Experimentation</h4>
+                    <p>From a young age, I was drawn to building and tinkering with technology. In middle school, I experimented with a Raspberry Pi and immediately started to build a tiny hand held emulator using RetroPie. Without access to 3D printers, I had to improvise enclosures and mounts, learning hardware hacking and problem-solving through trial and error.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h4>High School: Robotics & Autonomous Systems</h4>
+                    <p>In high school, I immersed myself in robotics as part of FIRST Robotics Competition (FRC), taking on the role of Autonomous Programming Lead. This experience introduced me to:
+                    developing complex autonomous routines, including drive control and sequential mechanism operation. Tuning PID controllers and characterizing robots to adapt old designs to new builds. Simulating drive trains in Python when hardware access was limited. Pushing the boundaries of autonomous movement, leading my team to earn awards in Autonomy and Control Innovation.
+                  </p>
+                </div>
+
+                <div class="about-section">
+                    <h4>Who Am I Now?</h4>
+                    <p>I'm someone who follows my interests where they take me. I love chess, video games, and music, and I find myself most awake and inspired at night. I enjoy reading from time to time, and if I had to pick a favorite book, it would be Flowers for Algernon. My favorite movie? The Departed. My favorite game right now? Celeste.</p>
+                    <p>I value my family and the time I spend with them. I don't attend class much, but I enjoy learning on my own—I find that I'm intuitive and pick things up naturally. That said, I don't enjoy working hard unless it's something I'm genuinely passionate about. If there's an easier, hackier way to do something, I'll take it. Efficiency over effort except when it's not.</p>
+                    <p>Outside of tech, I love to cook at home, and at some point, I'll turn this into a cooking page. Maybe.</p>
+                </div>
+                
+                <div class="resume-link">
+                    <a href="assets/Marcos Resume.pdf" target="_blank" class="resume-btn">
+                        <i class="fas fa-file-alt"></i>
+                        View My Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+        
+        <div class="project-grid">
+            <!-- Ray Tracer Game -->
+            <div class="project-card" data-aos="fade-up">
+                <button class="project-close"><i class="fas fa-times"></i></button>
+                <div class="project-image" style="background-image: url('https://sinepost.wordpress.com/wp-content/uploads/2012/06/wolf3d-better.png?w=584');">
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Real-Time Ray Casting Engine</h3>
+                    <p class="short-text">
+                        A pseudo-3D ray-casting demo that projects a 2D grid into a first-person view, 
+                        complete with dynamic lighting. <strong>Click to learn more…</strong>
+                    </p>
+                    <div class="tech-stack">
+                        <span>Three.js</span>
+                        <span>WebGL</span>
+                        <span>JavaScript</span>
+                        <span>Physics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Marcos-D/ray-casting-engine" class="project-btn"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <div class="project-expanded-content">
+                    <p class="long-text">
+                        This project adapts classical 2D ray-casting techniques from 
+                        <a href="https://lodev.org/cgtutor/raycasting.html"
+                        target="_blank"
+                        class="raycasting-link">
+                        Lode's Raycasting Tutorial
+                        </a>
+                        to create a pseudo-3D environment. Rays are cast from a camera through a 2D map, 
+                        and walls are projected onto the screen to simulate depth. Dynamic lighting 
+                        further enhances the illusion of three-dimensional space—without requiring 
+                        a full physics engine. Future updates may incorporate more advanced features 
+                        like volumetric effects, interactive objects, or actual 3D physics.
+                      </p>
+                    <div class="project-media">
+                        <!-- <div class="video-wrapper"> -->
+                            <video src="assets/videos/ray-caster.mp4" controls></video>
+                        <!-- </div> -->
+
+
+                    </div>
+                    <div class="project-code">
+                        <pre><code>Algorithm RayCast2DTo3D(grid, camera):
+    For each column x in the screen width:
+        1. Calculate the angle of the ray based on camera direction & x.
+        2. Step through the 2D grid until hitting a wall or max distance.
+        3. Compute distance to wall & project onto the screen:
+                - The closer the wall, the taller the column of pixels.
+        4. Apply lighting or shading based on distance or angle.
+        5. Render the column in the final frame buffer.
+                                  </code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physics Animation System -->
+            <div class="project-card" data-aos="fade-up">
+                <button class="project-close"><i class="fas fa-times"></i></button>
+                <div class="project-image" style="background-image: url('https://cdn.tutsplus.com/cdn-cgi/image/width=360/cg/uploads/legacy/424_Blender_Rigging_LP_Characters/Preview.jpg');">
+                    <div class="project-overlay">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>3D Physics & Animation Framework</h3>
+                    <p>Comprehensive physics simulation environment integrating skeletal animation, cloth dynamics, and fluid simulation using OpenGL. Features real-time soft-body deformation and particle system interactions.</p>
+                    <div class="tech-stack">
+                        <span>OpenGL</span>
+                        <span>C++</span>
+                        <span>GLSL</span>
+                        <span>Physics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#" class="project-btn"><i class="fas fa-play"></i> Demo</a>
+                    </div>
+                </div>
+                <div class="project-expanded-content">
+                    <div class="project-media">
+                        <img src="path_to_physics_demo.jpg" alt="Physics System Demo">
+                        <video src="path_to_physics_video.mp4" controls></video>
+                    </div>
+                    <div class="project-code">
+                        <pre><code>class PhysicsEngine {
+    constructor() {
+        this.particles = []
+        this.constraints = []
+        this.dt = 1.0 / 60.0
+    }
+
+    simulate() {
+        this.integrateForces()
+        this.solveConstraints()
+        this.updatePositions()
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Pathfinding -->
+            <div class="project-card" data-aos="fade-up">
+                <button class="project-close"><i class="fas fa-times"></i></button>
+                <div class="project-image" style="background-image: url('https://happycoding.io/tutorials/libgdx/images/pathfinding-12.png');">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <h3>Game AI & Pathfinding</h3>
+                    <!-- Short teaser text -->
+                    <p class="short-text">
+                        An advanced pathfinding engine featuring classical search algorithms 
+                        (DFS, BFS, UCS, and A*) with dynamic obstacle avoidance. 
+                        <strong>Click to learn more…</strong>
+                      </p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>AI</span>
+                        <span>Algorithms</span>
+                        <span>PyGame</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
+                    </div>
+                </div>
+
+
+
+                <div class="project-expanded-content">
+
+                    <p class="long-text">
+                        The system leverages proven techniques such as DFS, BFS, UCS, and an 
+                        enhanced A* algorithm—featuring dynamic obstacle avoidance—to compute 
+                        optimal paths efficiently. Constraint-based puzzle solving capabilities 
+                        allow it to handle complex environmental restrictions and movement 
+                        challenges. While grounded in traditional optimization methods, this 
+                        engine lays a solid foundation for intelligent behavior in games and 
+                        offers potential for future integration of adaptive, heuristic-driven 
+                        learning.
+                      </p>
+
+                    <div class="project-media">
+                        <!-- DFS (top-left) -->
+                        <div class="video-container">
+                          <h3>DFS</h3>
+                          <video id="dfsVideo" src="assets/videos/DFS.mp4" controls></video>
+                        </div>
+                      
+                        <!-- UCS (top-right) -->
+                        <div class="video-container">
+                          <h3>UCS</h3>
+                          <video id="ucsVideo" src="assets/videos/UCS.mp4" controls></video>
+                        </div>
+                      
+                        <!-- BFS (bottom-left) -->
+                        <div class="video-container">
+                          <h3>BFS</h3>
+                          <video id="bfsVideo" src="assets/videos/BFS.mp4" controls></video>
+                        </div>
+                      
+                        <!-- A* (bottom-right) -->
+                        <div class="video-container">
+                          <h3>A*</h3>
+                          <video id="aStarVideo" src="assets/videos/A_star.mp4" controls></video>
+                        </div>
+                    </div>
+                      
+                      
+                    <div class="project-code-grid">
+                        <!-- DFS Pseudocode -->
+                        <div class="project-code">
+                          <pre><code>
+Algorithm DFS(start, goal):
+    frontier ← stack with start
+    explored ← empty set
+
+    while frontier is not empty:
+        current ← frontier.pop()       // LIFO order
+        if current equals goal:
+            return path from start to current
+
+        mark current as visited (add to explored)
+        for each neighbor of current:
+            if neighbor is within grid bounds 
+            and not an obstacle and not visited:
+                push neighbor to frontier
+                record parent of neighbor as current
+
+    return failure (no path found)
+                          </code></pre>
+                        </div>
+                      
+                        <!-- BFS Pseudocode -->
+                        <div class="project-code">
+                          <pre><code>
+Algorithm BFS(start, goal):
+    frontier ← queue with start
+    explored ← empty set
+
+    while frontier is not empty:
+        current ← frontier.dequeue()   // FIFO order
+        if current equals goal:
+            return path from start to current
+
+        mark current as visited (add to explored)
+        for each neighbor of current:
+            if neighbor is within grid bounds 
+            and not an obstacle and not visited:
+                enqueue neighbor to frontier
+                record parent of neighbor as current
+
+    return failure (no path found)
+                          </code></pre>
+                        </div>
+                      
+                        <!-- UCS Pseudocode -->
+                        <div class="project-code">
+                          <pre><code>
+Algorithm UCS(start, goal):
+    frontier ← priority queue with (cost=0, start)
+    explored ← empty set
+
+    while frontier is not empty:
+        (current_cost, current) ← frontier.pop()  // lowest cost first
+        if current equals goal:
+            return path from start to current w/ total cost current_cost
+
+        mark current as visited (add to explored)
+        for each neighbor of current:
+            if neighbor is within grid bounds 
+            and not an obstacle and not visited:
+                new_cost ← current_cost + cost(neighbor)
+                add (new_cost, neighbor) to frontier
+                record parent of neighbor as current
+
+    return failure (no path found)
+                          </code></pre>
+                        </div>
+                      
+                        <!-- A* Pseudocode -->
+                        <div class="project-code">
+                          <pre><code>Algorithm A*(start, goal):
+    Define h(n) as the heuristic
+    frontier ← priority queue with (f = h(start), g = 0, start)
+    explored ← empty set
+
+    while frontier is not empty:
+        // pop lowest f first
+        (current_f, current_g, current) ← frontier.pop() 
+        if current equals goal:
+            return path from start to current with total cost current_g
+
+        mark current as visited (add to explored)
+        for each neighbor of current:
+            if neighbor is within grid bounds 
+            and not an obstacle and not visited:
+                new_g ← current_g + cost(neighbor)
+                new_f ← new_g + h(neighbor)
+                add (new_f, new_g, neighbor) to frontier
+                record parent of neighbor as current
+
+    return failure (no path found)
+                      
+                          return failure (no path found)
+                          </code></pre>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="more-projects" data-aos="fade-up">
+            <button class="more-projects-btn" onclick="toggleMoreProjects()">
+                <span>View More Projects</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            
+            <div class="additional-projects">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+                        <div class="project-overlay">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>NachOS Operating System</h3>
+                        <p>Built key components of a custom OS using NachOS framework, implementing process management, memory handling, and synchronization mechanisms.</p>
+                        <div class="tech-stack">
+                            <span>C++</span>
+                            <span>OS</span>
+                            <span>Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+                        <div class="project-overlay">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Bayesian Room Occupancy</h3>
+                        <p>Real-time room occupancy detection using probabilistic modeling and Bayesian inference, processing environmental sensor data for smart building applications.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Bayesian</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title" data-aos="fade-up">Technical Arsenal</h2>
+        <div class="skills-content">
+            <div class="skills-category" data-aos="fade-up">
+                <h3>Game Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Version Control</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-square-root-alt"></i>
+                        <span>3D Math</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-vector-square"></i>
+                        <span>OpenGL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>Programming</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                <h3>Tools & Technologies</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-bug"></i>
+                        <span>Debug</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
+        <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-text">
+                <p>Interested in game development collaboration or want to discuss a project? Let's connect!</p>
+            </div>
+            <div class="contact-links">
+                <a href="https://github.com/Marcos-D" target="_blank" class="contact-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/marcosdlt/" target="_blank" class="contact-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://www.instagram.com/marcossh.d/" target="_blank" class="contact-btn">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 | Game Developer Portfolio</p>
+            <div class="footer-links">
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

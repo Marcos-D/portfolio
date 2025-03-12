@@ -1,0 +1,90 @@
+Project 1: Ray Tracer Game
+A real-time ray-casting game inspired by classic Wolfenstein 3D, built using Three.js (a WebGL interface). The game features a retro-style 3D rendering engine based on techniques from Lodev’s raycasting tutorial.
+Features:
+Raycasting-based 3D rendering with textured walls, doors, and interactive elements.
+Dynamic lighting system with a flashlight mechanic that affects visibility.
+Mob entities that react to sound cues and navigate the map using BFS/DFS pathfinding to pursue the player.
+Animated gun mechanics with reload animations and ammo tracking.
+Stamina system affecting movement speed and sprinting capabilities.
+Doors and objects with basic animations, contributing to an immersive world.
+Built entirely in Three.js, leveraging WebGL for optimized browser-based performance.
+Future Plans:
+Implement multiplayer functionality, allowing multiple players to interact in a shared world.
+Expand AI behavior for more advanced enemy pathfinding and decision-making.
+Introduce more interactive world elements, such as destructible objects and new enemy types.
+The game is actively in development, aiming to blend classic raycasting gameplay with modern mechanics.
+Project 2: Skeleton Animation System, Cloth & Fluid Simulation
+This project integrates 3D character animation, cloth physics, and fluid simulation into a unified physics-based simulation environment using OpenGL. The goal is to create a physically interactive system where a rigged skeleton model with soft-body elements (such as cloth) interacts with a Smoothed Particle Hydrodynamics (SPH) fluid simulation in real time.
+Accomplishments So Far:
+Skeleton Animation System: Implemented a 3D character skeleton with articulated motion, allowing for dynamic movements.
+Cloth Physics Simulation: Added realistic cloth dynamics to the character, simulating soft-body interactions with external forces.
+SPH Fluid Simulation (CPU-Based): Developed a Smoothed Particle Hydrodynamics (SPH) solver in OpenGL, enabling particle-based fluid interactions.
+Physics Integration: Explored methods to unify rigid-body, soft-body, and fluid interactions within the simulation.
+Real-Time Rendering: Optimized the simulation for interactive performance, focusing on efficient data structures and computation techniques.
+Future Goals:
+Enhance fluid-character interaction, allowing the character’s movements to displace and react to the fluid in real time.
+Optimize performance for GPU-based parallel processing, improving simulation speed and realism.
+Expand physics-based behaviors, such as wind effects on cloth and fluid adhesion to surfaces.
+Project 3:
+Building a Custom Operating System with NachOS
+As part of the CSE 120 Operating Systems course, I developed key components of a custom OS using NachOS (Not Another Completely Heuristic Operating System), a pedagogical framework designed to teach OS fundamentals. This project involved low-level systems programming in C++, focusing on process management, memory handling, and synchronization mechanisms.
+Accomplishments:
+Thread Scheduling & Synchronization: Implemented multi-threading with priority scheduling, using locks, condition variables, and semaphores to manage concurrency.
+Process Management: Extended user-level process handling, allowing multiple programs to execute concurrently with proper context switching.
+Virtual Memory Implementation: Designed demand paging with a page replacement algorithm, enabling efficient memory allocation.
+File System Development: Enhanced NachOS’s file system layer, implementing file creation, reading, and writing within the simulated OS.
+System Call Handling: Expanded the OS kernel to support user-defined system calls, such as file I/O, process creation, and inter-process communication (IPC).
+Future Enhancements:
+Further optimize scheduler efficiency for better CPU utilization.
+Explore multilevel paging to improve virtual memory performance.
+Experiment with additional file system optimizations for larger data storage.
+This project provided hands-on experience with OS internals, preparing me for systems-level development and low-level programming challenges.
+Project 4: Pathfinding & Constraint Solving: AI Algorithms in Search and Logic
+This project combines two key AI problem-solving techniques: heuristic pathfinding and constraint satisfaction solving, both implemented in Python as part of coursework in CSE 150B (AI Algorithms) and Sudoku Constraint Solving.
+
+Pathfinding Algorithms (CSE 150B)
+Implemented search-based pathfinding algorithms for grid-based navigation, exploring different heuristics and search strategies to optimize movement.
+
+Accomplishments:
+A* Search with Euclidean Distance: Modified heuristic calculations to use Euclidean distance instead of Manhattan distance for more accurate movement estimation in continuous spaces.
+Uniform Cost Search & Greedy Best-First Search: Compared different search strategies to analyze trade-offs between optimality and efficiency.
+Heuristic Design & Optimization: Tuned heuristic weight functions to improve path efficiency while maintaining correctness.
+Future Work:
+Apply pathfinding to game AI or robotics simulations for more practical implementations.
+Optimize memory usage and search time with dynamic path smoothing techniques.
+Project 5: Sudoku Constraint Solver
+Developed a constraint-based Sudoku solver, utilizing backtracking search and SAT encoding/decoding to efficiently solve Sudoku puzzles within a 10-second limit.
+
+Accomplishments:
+Backtracking Search: Implemented a recursive solver that efficiently prunes the search space using constraint propagation.
+SAT Encoding & Decoding: Transformed Sudoku rules into Boolean constraints, enabling logical deduction with a SAT solver.
+Optimized Performance: Ensured solutions met the strict time complexity requirements by refining constraint application strategies.
+Future Work:
+Integrate machine learning techniques to predict constraint interactions and optimize search efficiency.
+Apply similar constraint-solving techniques to other logic-based puzzles and real-world scheduling problems.
+
+Project 6: Room Occupancy Detection using Bayesian Inference
+This project focuses on real-time room occupancy detection using probabilistic modeling based on environmental sensor data. Instead of traditional machine learning models, we implemented a Naïve Bayes classifier and Bayesian network to infer occupancy states dynamically. This approach allows for uncertainty-aware predictions that can be continuously updated as new sensor data arrives, making it ideal for smart building applications such as energy-efficient climate control and room utilization optimization.
+
+Accomplishments:
+Dataset Processing: Used a 17,895-row dataset containing temperature, humidity, light, CO₂, HumidityRatio, timestamps, and occupancy labels. Parsed data into Pandas DataFrames for efficient computation.
+Naïve Bayes Classification:
+Modeled temperature as the primary predictor of room occupancy.
+Computed likelihood probabilities using Bayes’ Theorem to estimate occupancy states.
+Discretized temperature values into bins for improved generalization.
+Conditional Probability Tables (CPTs):
+Calculated CPTs for all sensor features to model dependencies with occupancy.
+Stored results in a Jupyter Notebook for interactive analysis.
+Utility-Based Decision Making:
+Designed an agent that evaluates multiple environmental factors to estimate occupancy probability.
+Integrated conditional probability distributions to refine predictions.
+Results & Challenges:
+Achieved 66.98% accuracy when using temperature alone as the predictive feature.
+High accuracy for detecting unoccupied rooms (91% recall), but struggled with identifying occupied rooms (only 26% recall).
+Significant precision-recall imbalances, leading to false negatives when predicting occupancy.
+Future Improvements:
+Incorporate additional sensor features (humidity, light, CO₂) to improve model accuracy.
+Implement more advanced probabilistic models, such as Hidden Markov Models (HMMs) or Gaussian Mixture Models (GMMs) for better classification.
+Develop a real-time deployment pipeline for integration into room utilization display systems.
+This project highlights the strengths and limitations of Bayesian inference for occupancy detection and provides a foundation for more advanced probabilistic modeling in smart building automation.
+
