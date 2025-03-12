@@ -10,6 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Three.js and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.4/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/inflate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="particles.js"></script>
+    <!-- End Three.js dependencies -->
 </head>
 <body>
     <nav class="navbar">
@@ -55,13 +63,13 @@
                     </div>
                     <div class="code-content">
                         <pre><code>class GameDev {
-  constructor() {
+  player() {
     this.passion = "Creating Games";
     this.favoriteShow = "Adventure Time!";
     this.needsCoffee = true;
   }
   
-  myMission() {
+  tasks() {
     return [
       "Inspire Others",
       "Build Worlds",
@@ -95,7 +103,7 @@
 
                 <div class="about-section">
                     <h4>Who Am I Now?</h4>
-                    <p>I'm someone who follows my interests where they take me. I love chess, video games, and music, and I find myself most awake and inspired at night. I enjoy reading from time to time, and if I had to pick a favorite book, it would be Flowers for Algernon. My favorite movie? The Departed. My favorite game right now? Celeste.</p>
+                    <p>I'm someone who follows my interests where they take me. I love chess, video games, and music, and I find myself most awake and inspired at night. My favorite book? Flowers for Algernon. My favorite movie? The Departed. My favorite game right now? Celeste.</p>
                     <p>I value my family and the time I spend with them. I don't attend class much, but I enjoy learning on my own—I find that I'm intuitive and pick things up naturally. That said, I don't enjoy working hard unless it's something I'm genuinely passionate about. If there's an easier, hackier way to do something, I'll take it. Efficiency over effort except when it's not.</p>
                     <p>Outside of tech, I love to cook at home, and at some point, I'll turn this into a cooking page. Maybe.</p>
                 </div>
@@ -191,29 +199,41 @@
                     </div>
                     <div class="project-links">
                         <a href="#" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="#" class="project-btn"><i class="fas fa-play"></i> Demo</a>
+                        <a href="https://en.wikipedia.org/wiki/Skeletal_animation" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
                     </div>
                 </div>
                 <div class="project-expanded-content">
+                    <div class="model-viewer-container" id="modelViewer"></div>
                     <div class="project-media">
-                        <img src="path_to_physics_demo.jpg" alt="Physics System Demo">
-                        <video src="path_to_physics_video.mp4" controls></video>
+                        <div class="model-info">
+                            <h3>Interactive 3D Model</h3>
+                            <p>This model demonstrates the physics engine's capabilities for skeletal animation and real-time deformation.</p>
+                            <ul>
+                                <li>Click and drag to rotate the view</li>
+                                <li>Scroll to zoom in/out</li>
+                                <li>Right-click and drag to pan</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="project-code">
-                        <pre><code>class PhysicsEngine {
-    constructor() {
-        this.particles = []
-        this.constraints = []
-        this.dt = 1.0 / 60.0
-    }
+                    <script src="3dviewer.js"></script>
+                    <script>
+                        let viewer = null;
+                        const modelPath = 'assets/models/tifa_fbx.fbx';
 
-    simulate() {
-        this.integrateForces()
-        this.solveConstraints()
-        this.updatePositions()
-    }
-}</code></pre>
-                    </div>
+                        // Prevent click events from bubbling up from the model viewer
+                        const modelViewer = document.getElementById('modelViewer');
+                        if (modelViewer) {
+                            modelViewer.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                            });
+                            modelViewer.addEventListener('pointerdown', (e) => {
+                                e.stopPropagation();
+                            });
+                            modelViewer.addEventListener('mousedown', (e) => {
+                                e.stopPropagation();
+                            });
+                        }
+                    </script>
                 </div>
             </div>
 
@@ -395,9 +415,10 @@ Algorithm UCS(start, goal):
             </button>
             
             <div class="additional-projects">
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card disabled" data-aos="fade-up">
                     <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
                         <div class="project-overlay">
+                            <span class="coming-soon">Coming Soon</span>
                         </div>
                     </div>
                     <div class="project-content">
@@ -411,9 +432,10 @@ Algorithm UCS(start, goal):
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card disabled" data-aos="fade-up">
                     <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
                         <div class="project-overlay">
+                            <span class="coming-soon">Coming Soon</span>
                         </div>
                     </div>
                     <div class="project-content">
@@ -522,5 +544,12 @@ Algorithm UCS(start, goal):
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize particle system
+        let particleSystem;
+        document.addEventListener('DOMContentLoaded', () => {
+            particleSystem = new ParticleSystem();
+        });
+    </script>
 </body>
 </html>

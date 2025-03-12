@@ -176,17 +176,37 @@ body {
 
 /* Code Window */
 .code-window {
-    background: var(--card-bg);
+    background: #1a1a1a;  /* Dark background for dark mode */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);  /* Stronger shadow */
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="light"] .code-window {
+    background: #f8f8f8;  /* Light background for light mode */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);  /* Lighter shadow for light mode */
+}
+
+.code-content {
+    padding: 1.5rem;
+    background: #1a1a1a;  /* Solid dark background */
+}
+
+[data-theme="light"] .code-content {
+    background: #f8f8f8;  /* Solid light background */
 }
 
 .window-header {
-    background: #1a1a1a;
+    background: #000000;  /* Dark header for dark mode */
     padding: 0.8rem;
     display: flex;
     gap: 8px;
+}
+
+[data-theme="light"] .window-header {
+    background: #e0e0e0;  /* Light header for light mode */
 }
 
 .dot {
@@ -204,14 +224,15 @@ body {
     background: #27c93f;
 }
 
-.code-content {
-    padding: 1.5rem;
-}
-
 .code-content pre {
     margin: 0;
-    color: var(--primary-color);
+    color: #ffffff;  /* White text for dark mode */
     font-family: 'Fira Code', monospace;
+    line-height: 1.6;  /* Better line spacing */
+}
+
+[data-theme="light"] .code-content pre {
+    color: #1a1a1a;  /* Dark text for light mode */
 }
 
 /* Projects Section */
@@ -866,4 +887,91 @@ footer {
     .project-card.expanded .project-image {
         height: 250px;
     }
+}
+
+.model-viewer-container {
+    width: 100%;
+    height: 400px;
+    background-color: #1a1a1a;  /* Dark gray for dark mode */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid var(--text-secondary);
+}
+
+/* Light theme override for model viewer */
+[data-theme="light"] .model-viewer-container {
+    background-color: #f5f5f5;  /* Light gray for light mode */
+}
+
+/* Ensure the canvas background is transparent in both modes */
+.model-viewer-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+}
+
+.model-info {
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid var(--text-secondary);
+}
+
+.model-info h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.model-info p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.model-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.model-info li {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.model-info li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.project-card.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+    cursor: default;
+}
+
+.project-card.disabled .project-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.project-card.disabled .project-links {
+    opacity: 0.5;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }

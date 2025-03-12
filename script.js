@@ -17,7 +17,9 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 updateThemeIcon(currentTheme);
 
 themeToggle.addEventListener('click', () => {
-    const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
@@ -32,8 +34,8 @@ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
 mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
 });
 
 // Close mobile menu when clicking a link
@@ -135,21 +137,54 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Toggle More Projects
 function toggleMoreProjects() {
-    const btn = document.querySelector('.more-projects-btn');
     const additionalProjects = document.querySelector('.additional-projects');
+    const btn = document.querySelector('.more-projects-btn');
     const btnText = btn.querySelector('span');
-    
-    btn.classList.toggle('active');
+    const btnIcon = btn.querySelector('i');
+
     additionalProjects.classList.toggle('show');
     
     if (additionalProjects.classList.contains('show')) {
         btnText.textContent = 'Show Less';
+        btnIcon.classList.replace('fa-chevron-down', 'fa-chevron-up');
     } else {
         btnText.textContent = 'View More Projects';
+        btnIcon.classList.replace('fa-chevron-up', 'fa-chevron-down');
     }
 }
 
-// Project card expansion
+// Initialize video synchronization
+const videos = [
+    document.getElementById('dfsVideo'),
+    document.getElementById('bfsVideo'),
+    document.getElementById('ucsVideo'),
+    document.getElementById('aStarVideo')
+];
+
+let longestDuration = 0;
+
+// Find the longest video duration
+videos.forEach(video => {
+    video.addEventListener('loadedmetadata', () => {
+        if (video.duration > longestDuration) {
+            longestDuration = video.duration;
+        }
+    });
+});
+
+function timeUpdateHandler() {
+    // Check if all videos have finished
+    const allFinished = videos.every(video => video.currentTime >= video.duration - 0.1);
+    if (allFinished) {
+        // Reset all videos to start
+        videos.forEach(video => {
+            video.currentTime = 0;
+            video.play();
+        });
+    }
+}
+
+// Project card functionality
 const projectCards = document.querySelectorAll('.project-card');
 const body = document.body;
 
@@ -173,7 +208,7 @@ projectCards.forEach(card => {
             closeExpandedCard();
             return;
         }
-
+        
         // Close any other expanded cards
         closeExpandedCard();
 
@@ -186,7 +221,32 @@ projectCards.forEach(card => {
         if (closeBtn) {
             closeBtn.style.display = 'flex';
         }
-        syncVideos();
+
+        // Initialize viewer if this is the physics card
+        if (card === document.querySelector('.project-card:nth-child(2)')) {
+            console.log('Initializing 3D viewer...');
+            setTimeout(() => {
+                if (viewer) {
+                    viewer.cleanup();
+                    viewer = null;
+                }
+                try {
+                    viewer = new ModelViewer('modelViewer');
+                    viewer.loadModel('assets/models/tifa_fbx.fbx');
+                } catch (error) {
+                    console.error('Error initializing viewer:', error);
+                }
+            }, 100);
+        }
+
+        // Handle video synchronization for the pathfinding card
+        if (card === document.querySelector('.project-card:nth-child(3)')) {
+            videos.forEach(video => {
+                video.currentTime = 0;
+                video.play();
+                video.addEventListener('timeupdate', timeUpdateHandler);
+            });
+        }
     });
 });
 
@@ -201,6 +261,21 @@ function closeExpandedCard() {
         const closeBtn = expandedCard.querySelector('.project-close');
         if (closeBtn) {
             closeBtn.style.display = 'none';
+        }
+
+        // Cleanup viewer if this was the physics card
+        if (expandedCard === document.querySelector('.project-card:nth-child(2)') && viewer) {
+            viewer.cleanup();
+            viewer = null;
+        }
+
+        // Stop and cleanup videos if this was the pathfinding card
+        if (expandedCard === document.querySelector('.project-card:nth-child(3)')) {
+            videos.forEach(video => {
+                video.pause();
+                video.currentTime = 0;
+                video.removeEventListener('timeupdate', timeUpdateHandler);
+            });
         }
     }
 }
@@ -221,55 +296,5 @@ document.querySelectorAll('.project-expanded-content').forEach(content => {
         e.stopPropagation();
     });
 });
-
-function syncVideos() {
-    // Get the videos by their IDs.
-    const dfsVideo   = document.getElementById('dfsVideo');
-    const bfsVideo   = document.getElementById('bfsVideo');
-    const ucsVideo   = document.getElementById('ucsVideo'); // Longest video (7 s)
-    const aStarVideo = document.getElementById('aStarVideo');
-    
-    // If any video is missing, exit the function.
-    if (!dfsVideo || !bfsVideo || !ucsVideo || !aStarVideo) return;
-
-    // Put the videos in an array for convenience.
-    const videos = [dfsVideo, bfsVideo, ucsVideo, aStarVideo];
-
-    // Disable controls and set up pause listeners on each video.
-    videos.forEach(video => {
-        video.loop = false;           // Disable native looping.
-        video.muted = true;           // Mute to ensure autoplay works.
-        video.controls = false;       // Remove the controls so users cannot click pause.
-        
-        // Listen for the pause event and immediately resume playing.
-        video.addEventListener('pause', () => {
-            // Only resume if the video is not already at time 0 (i.e. during our intentional reset).
-            if (video.currentTime !== 0) {
-                video.play();
-            }
-        });
-    });
-
-    // Function to reset and play all videos.
-    function playAllVideos() {
-        videos.forEach(video => {
-            video.currentTime = 0; // Rewind each video.
-            video.play();          // Play the video.
-        });
-    }
-
-    // Define an event listener for when the UCS video (the longest) ends.
-    function onUcsEnded() {
-        playAllVideos();
-    }
-
-    // Remove any existing listener to prevent stacking.
-    ucsVideo.removeEventListener('ended', onUcsEnded);
-    // Attach the event listener (without { once: true } so it continues looping).
-    ucsVideo.addEventListener('ended', onUcsEnded);
-
-    // Start playing all videos at once.
-    playAllVideos();
-}
 
 
