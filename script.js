@@ -11,8 +11,8 @@ const themeToggle = document.querySelector('.theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Check for saved theme preference or use system preference
-const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+// Always default to light theme, only use saved preference if it exists
+const currentTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', currentTheme);
 updateThemeIcon(currentTheme);
 

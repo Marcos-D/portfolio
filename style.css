@@ -95,6 +95,15 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.logo img {
+    filter: invert(40%) sepia(100%) saturate(1800%) hue-rotate(300deg) brightness(100%) contrast(100%);
+    transition: filter 0.3s ease;
+}
+
+[data-theme='dark'] .logo img {
+    filter: invert(40%) sepia(100%) saturate(1800%) hue-rotate(300deg) brightness(100%) contrast(100%);
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -264,7 +273,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
 }
 
 /* Only apply hover effect to non-expanded cards */
@@ -276,7 +286,7 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: none;
     width: 90vw;
     max-width: 1200px;
     max-height: 85vh;
@@ -288,6 +298,7 @@ body {
     cursor: default;
     border-radius: 15px;
     animation: modalAppear 0.3s ease forwards;
+    opacity: 1;
 }
 
 @keyframes modalAppear {
@@ -974,4 +985,31 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure modals are above the project grid */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.profile-pic-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 0, 153, 0.3);
 }
