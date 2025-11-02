@@ -1,4 +1,9 @@
 // Initialize AOS
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const auroraContainer = document.querySelector('.aurora-container');
+            new Aurora(auroraContainer);
+        });
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
@@ -99,13 +104,13 @@ window.addEventListener('scroll', () => {
 // Typing effect for code window
 const codeContent = document.querySelector('.code-content pre code');
 if (codeContent) {
-    const text = codeContent.innerHTML;
+    const codeText = `skills() {\n  return ["React", "Node.js", "MongoDB", "Docker", "Python", "C++"];\n}\n\nprojects() {\n  return [\n    "PantryPal — AI-powered recipe app with streamed ChatGPT responses",\n    "Jack Donuts Rewards — Firebase-based loyalty platform"\n  ];\n}\n\nexperience() {\n  return [\n    "Software Engineering Tutor — UC San Diego",\n    "Embedded Systems Researcher — UC San Diego",\n    "Tech Camp Instructor — SCDC"\n  ];\n}`;
     codeContent.innerHTML = '';
     let i = 0;
     
     function typeWriter() {
-        if (i < text.length) {
-            codeContent.innerHTML += text.charAt(i);
+        if (i < codeText.length) {
+            codeContent.innerHTML += codeText.charAt(i);
             i++;
             setTimeout(typeWriter, 50);
         }

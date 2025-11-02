@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aurora.css">
     <!-- Three.js and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.4/umd/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/inflate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="particles.js"></script>
     <!-- End Three.js dependencies -->
 </head>
 <body>
@@ -24,7 +24,7 @@
         <div class="nav-content">
             <div class="logo">
                 <a href="#home">
-                    <img src="assets/images/logo.png" alt="Logo" style="height: 40px;" />
+                    <span class="logo-text">MDLT</span>
                   </a>
 
 
@@ -48,13 +48,14 @@
     </nav>
 
     <section id="home" class="hero">
+        <div class="aurora-container"></div>
         <div class="hero-content">
             <div class="hero-text" data-aos="fade-up">
                 <h1>Marcos De La Torre</h1>
-                <h2>Computer Engineering Student</h2>
-                <p>Learned some stuff. Learning more stuff. Making cool stuff.</p>
+                <h2>Software Engineer</h2>
+                <p>Always learning, always refining my skills.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="primary-btn">View Projects</a>
+                    <a href="#about" class="primary-btn">See my value</a>
                     <a href="#contact" class="secondary-btn">Get in Touch</a>
                 </div>
             </div>
@@ -66,33 +67,32 @@
                         <span class="dot"></span>
                     </div>
                     <div class="code-content">
-                        <pre><code>class Marcos {
-  constructor() {
-    this.origin = "Lynwood, CA";
-    this.motto = "you only live once.";
-    this.creates = ["tools", "games?", "food", "raspberry pi things"];
-  }
+                        <pre><code>skills() {
+  return ["React", "Node.js", "MongoDB", "Docker", "Python", "Java"];
+}
 
-  interests = {
-    hobbies: ["chess", "platformers", "cooking"],
-    favoriteGame: "Celeste",
-    favoriteShow: "Adventure Time",
-    favoriteMovie: "The Departed"
-  };
+projects() {
+  return [
+    "PantryPal - AI-powered recipe app with streamed ChatGPT responses",
+    "Jack Donuts Rewards - Firebase-based loyalty platform"
+  ];
+}
 
-  avoid() {
-    return ["inefficiency", 
-            "not procrastinating", "being bored"];
-  }
-
-  dream() {
-    return "Work that blends creativity, code, and impact. " +
-           "Something cool, something useful.";
-  }
+experience() {
+  return [
+    "Software Engineering Tutor — UC San Diego",
+    "Embedded Systems Researcher — UC San Diego",
+    "Tech Camp Instructor — SCDC"
+  ];
 }</code></pre>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about" aria-label="Scroll to About">
+                <i class="fas fa-arrow-down"></i>
+            </a>
         </div>
     </section>
 
@@ -105,15 +105,12 @@
             <div class="about-text">
                 
                 <div class="about-section">
-                    <h4>Who Am I?</h4>
-                    <p>I am only good at the things I find interesting.<br>
-                    Right now, that means improving my skills in AI, embedded systems, and game development, while always chasing new ways to build smarter, faster, and better.</p>
-                    <p>I also like spamming educational content when I can.<br>
-                    I find myself most creative after dark, usually fueled by rap and hip-hop. My favorite artist is Drake.</p>
-                    <p>I studied Electrical and Computer Engineering at UC San Diego, after graduating from the California Academy of Mathematics and Science (CAMS). Along the way, I built SaaS applications, developed embedded control systems, trained AI models, and designed real-time simulations. My professors and teachers gave me the tools, and I probably rushed to get handy with them before I was even ready.</p>
-                    <p>I am self-taught in a lot of areas, and I like it that way. I do not enjoy busywork, but my obsession is directly proportional to my productivity. If there is a smarter, faster, or slightly hacky way to solve a problem, I am probably already on it.</p>
-                    <p>Outside of tech, I cook a lot. One day this page might turn into a recipe blog. No promises.</p>
-                    <p>Favorite movie? <em>The Departed</em>. Favorite book? <em>Flowers for Algernon</em>. Favorite game? <em>Celeste</em>.</p>
+                    <p>I've found that my best work comes from the projects I'm most passionate about. When I'm fully engaged in a problem, I'm driven to find the most elegant and efficient solution.</p>
+                    <p>I began programming in high school through FIRST Robotics, where I helped design autonomous systems for our competition robots. Our team earned the Innovation in Control and Autonomous awards for work that fused Java, sensor feedback, and PIDF tuning into precise motion control. My proudest achievement wasn’t a trophy—it was reducing autonomous path error by analyzing log data, optimizing Bezier-curve velocity profiles, and characterizing each robot’s friction and voltage behavior until our trajectories ran flawlessly. That early focus on optimization and systems analysis still shapes how I engineer software today.</p>
+                    <p>Since then, I’ve evolved from robotics to full-stack and embedded development, building end-to-end solutions across API, database, and front-end layers. Projects like PantryPal, where I re-architected ChatGPT’s response delivery into streamed, incremental updates for low-latency user experience, and Jack Donuts Rewards App, a Firebase-based loyalty platform for small businesses, strengthened my ability to design scalable, maintainable systems that balance reliability with usability.</p>
+                    <p>At UC San Diego, I served as a Software Engineering Tutor, collaborating across 40+ student codebases to debug Android MVC architectures, construct user stories, and help teams meet deliverables under Agile sprints. The experience reinforced my collaborative instincts and ability to translate complex problems into actionable solutions.</p>
+                    <p>Most recently, as a Tech Camp Instructor for underrepresented high-school students, I led workshops on AI, cybersecurity, and game design—showing new developers that creativity and logic can coexist.</p>
+                    <p>I’m based in Lynwood, California, and approach engineering like an optimization problem: define constraints, iterate relentlessly, and refine until it’s elegant, efficient, and scalable. I thrive on turning late-night curiosity into production-ready systems. I exhaust every resource, ask questions fearlessly, and never stop improving the process behind the product.</p>
                 </div>
                 
                 <div class="resume-link">
@@ -570,16 +567,16 @@ Algorithm UCS(start, goal):
                 <h3>Skills</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <i class="fas fa-microchip"></i>
-                        <span>Embedded Systems</span>
+                        <i class="fas fa-layer-group"></i>
+                        <span>Full Stack</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-robot"></i>
-                        <span>Robotics</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-project-diagram"></i>
+                        <i class="fas fa-server"></i>
                         <span>System Design</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <span>Databases</span>
                     </div>
                 </div>
             </div>
@@ -606,16 +603,16 @@ Algorithm UCS(start, goal):
                 <h3>Tools & Technologies</h3>
                 <div class="skill-items">
                     <div class="skill-item">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item">
                         <i class="fas fa-code-branch"></i>
                         <span>Git</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-terminal"></i>
-                        <span>Arduino</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Data Analysis</span>
+                        <i class="fas fa-infinity"></i>
+                        <span>CI/CD</span>
                     </div>
                 </div>
             </div>
@@ -654,14 +651,8 @@ Algorithm UCS(start, goal):
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Initialize particle system
-        let particleSystem;
-        document.addEventListener('DOMContentLoaded', () => {
-            particleSystem = new ParticleSystem();
-        });
-    </script>
+    <script src="script.js" defer></script>
+    <script src="aurora.js" defer></script>
 
     
 </body>

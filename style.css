@@ -39,6 +39,19 @@
     color: var(--text-color);
 }
 
+[data-theme="light"] .hero-text h1,
+[data-theme="light"] .hero-text h1 {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: #000000;
+}
+
+[data-theme="light"] .hero-text h2,
+[data-theme="light"] .hero-text p {
+    color: #000000;
+}
+
 [data-theme="light"] .logo a {
     color: var(--text-color);
 }
@@ -87,6 +100,13 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
 }
 
 .logo .accent {
@@ -150,7 +170,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(74, 0, 224, 0.15), transparent 50%);
+    background: transparent;
 }
 
 .hero-content {
@@ -160,10 +180,15 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    z-index: 1;
+}
+.hero-text {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     background: var(--accent-gradient);
@@ -172,7 +197,7 @@ body {
 }
 
 .hero-text h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
 }
@@ -185,37 +210,37 @@ body {
 
 /* Code Window */
 .code-window {
-    background: #1a1a1a;  /* Dark background for dark mode */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);  /* Stronger shadow */
     position: relative;
     z-index: 2;
 }
 
 [data-theme="light"] .code-window {
-    background: #f8f8f8;  /* Light background for light mode */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);  /* Lighter shadow for light mode */
+    background: rgba(248, 248, 248, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 .code-content {
     padding: 1.5rem;
-    background: #1a1a1a;  /* Solid dark background */
-}
-
-[data-theme="light"] .code-content {
-    background: #f8f8f8;  /* Solid light background */
+    background: transparent; /* Remove solid background */
 }
 
 .window-header {
-    background: #000000;  /* Dark header for dark mode */
+    background: rgba(0, 0, 0, 0.3);
     padding: 0.8rem;
     display: flex;
     gap: 8px;
-  }
+}
   
 [data-theme="light"] .window-header {
-    background: #e0e0e0;  /* Light header for light mode */
+    background: rgba(224, 224, 224, 0.3);
 }
 
 .dot {
@@ -223,6 +248,7 @@ body {
     height: 12px;
     border-radius: 50%;
     background: #ff5f56;
+    transition: filter 0.2s ease;
 }
 
 .dot:nth-child(2) {
@@ -231,6 +257,10 @@ body {
 
 .dot:nth-child(3) {
     background: #27c93f;
+}
+
+.window-header:hover .dot {
+    filter: brightness(0.8);
 }
 
 .code-content pre {
@@ -1026,6 +1056,60 @@ footer {
     .profile-pic-container {
         width: 150px;
         height: 150px;
+    }
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.scroll-down i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.scroll-down:hover a {
+    background: var(--primary-color);
+}
+
+.scroll-down:hover i {
+    color: white;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-down {
+        animation: none;
     }
 }
 
