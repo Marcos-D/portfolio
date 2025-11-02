@@ -1,28 +1,9 @@
-class Aurora {
+import * as ogl from 'https://cdn.jsdelivr.net/npm/ogl/src/index.js';
+
+export default class Aurora {
     constructor(container) {
         this.container = container;
-        this.loadOgl().then(() => {
-            this.init();
-        }).catch(err => console.error(err));
-    }
-
-    loadOgl() {
-        return new Promise((resolve, reject) => {
-            if (window.ogl) {
-                return resolve();
-            }
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/ogl/dist/ogl.umd.js';
-            script.onload = () => {
-                if (window.ogl) {
-                    resolve();
-                } else {
-                    reject('ogl not found on window object');
-                }
-            };
-            script.onerror = reject;
-            document.head.appendChild(script);
-        });
+        this.init();
     }
 
     init() {
