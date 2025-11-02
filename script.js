@@ -1,4 +1,4 @@
-import Aurora from './aurora.js';
+
 
 // Initialize AOS
 

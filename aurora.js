@@ -1,6 +1,4 @@
-import * as ogl from 'https://cdn.jsdelivr.net/npm/ogl/src/index.js';
-
-export default class Aurora {
+class Aurora {
     constructor(container) {
         this.container = container;
         this.init();
