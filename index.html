@@ -74,6 +74,7 @@
 projects() {
   return [
     "PantryPal - AI-powered recipe app with streamed ChatGPT responses",
+    "Jack Donuts Rewards - Firebase-based loyalty platform",
     "Jack Donuts Rewards - Firebase-based loyalty platform"
   ];
 }
@@ -126,6 +127,35 @@ experience() {
     <section id="projects" class="projects">
         <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
         
+        <!-- Jack Donuts Rewards App Featured Project -->
+        <div class="featured-project-card" data-aos="fade-right">
+            <div class="featured-project-image">
+                <img src="assets/images/jackdonuts_ui.png" alt="Jack Donuts Rewards App UI Screenshot" style="max-width: 220px; width: 100%; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);" />
+            </div>
+            <div class="featured-project-content">
+                <h2>Jack Donuts Rewards App</h2>
+                <p style="font-size: 1.1em; margin-bottom: 0.5em;">Developed a cross-platform mobile rewards application using React Native (Expo), Firebase Authentication, and Firestore for secure points tracking. Built internal admin tools for staff to process refund cases and send push notifications for promotions.</p>
+                <ul style="margin-bottom: 1em;">
+                    <li>Implemented a scalable leaderboard system with rate-limited and indexed queries to minimize read costs and prevent abuse under growing user traffic.</li>
+                    <li>Prototyped offline sync capability allowing staff to locally log transactions via CSV during outages, ensuring data integrity and reconciliation once online.</li>
+                    <li>Developed admin tools to handle refunds and deliver push notifications for promotions.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>React Native</span>
+                    <span>Firebase</span>
+                    <span>Firestore</span>
+                    <span>Mobile App</span>
+                    <span>Cross-Platform</span>
+                    <span>Push Notifications</span>
+                    <span>Offline Sync</span>
+                </div>
+                <div class="project-links" style="margin-top: 1em;">
+                    <a href="#" class="project-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+        </div>
+
         <!-- PantryPal Featured Project -->
         <div class="featured-project-card" data-aos="fade-right">
             <div class="featured-project-image">
@@ -135,11 +165,9 @@ experience() {
                 <h2>PantryPal</h2>
                 <p style="font-size: 1.1em; margin-bottom: 0.5em;">An AI-powered recipe management platform designed for home cooks and food enthusiasts. PantryPal leverages state-of-the-art AI and voice technology to make meal planning and cooking smarter, faster, and more fun.</p>
                 <ul style="margin-bottom: 1em;">
-                    <li>Integrated <strong>ChatGPT</strong> for instant, creative recipe generation based on available ingredients.</li>
-                    <li>Hands-free ingredient transcription using <strong>WhisperAPI</strong> for seamless voice input.</li>
-                    <li>Robust <strong>MongoDB</strong> backend for user profiles and recipe storage.</li>
-                    <li>Containerized with <strong>Docker</strong> for easy deployment and scalability.</li>
-                    <li>Agile workflow managed in <strong>Jira</strong> and tested with <strong>JUnit</strong>.</li>
+                    <li>Integrated <strong>ChatGPT</strong> and <strong>Whisper API</strong> for recipe generation and voice transcription, optimizing delivery with real-time streaming responses that rendered text incrementally to reduce latency and enhance interactivity.</li>
+                    <li>Architected a <strong>MongoDB</strong> backend for scalable recipe retrieval, containerized deployments with <strong>Docker</strong>, and automated testing and CI/CD pipelines using <strong>JUnit</strong> and <strong>GitHub Actions</strong> to maintain build stability across environments.</li>
+                    <li>Managed sprints and issue tracking in <strong>Jira</strong> and coordinated development through <strong>Discord</strong> to sustain delivery velocity.</li>
                 </ul>
                 <div class="tech-stack">
                     <span>AI Integration</span>
