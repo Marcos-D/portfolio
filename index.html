@@ -3,686 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Portfolio</title>
+    <title>Marcos De La Torre | Backend-leaning Full-Stack Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="aurora.css">
-    <!-- Three.js and dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.4/umd/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/inflate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <!-- End Three.js dependencies -->
 </head>
-<body>
+<body data-theme="dark">
     <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">
-                <a href="#home">
-                    <span class="logo-text">MDLT</span>
-                  </a>
-
-
-            </div>
+        <div class="container nav-content">
+            <a class="nav-logo" href="#home">Marcos De La Torre</a>
             <div class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
+                <a href="#home">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="projects.html">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fa-regular fa-sun"></i>
+            </button>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="aurora-container"></div>
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-up">
-                <h1>Marcos De La Torre</h1>
-                <h2>Software Engineer</h2>
-                <p>Always learning, always refining my skills.</p>
-                <div class="cta-buttons">
-                    <a href="#about" class="primary-btn">See my value</a>
-                    <a href="#contact" class="secondary-btn">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-visual" data-aos="fade-left">
-                <div class="code-window">
-                    <div class="window-header">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="code-content">
-                        <pre><code>skills() {
-  return ["React", "Node.js", "MongoDB", "Docker", "Python", "Java"];
-}
-
-projects() {
-  return [
-    "PantryPal - AI-powered recipe app with streamed ChatGPT responses",
-    "Jack Donuts Rewards - Firebase-based loyalty platform",
-    "Jack Donuts Rewards - Firebase-based loyalty platform"
-  ];
-}
-
-experience() {
-  return [
-    "Software Engineering Tutor — UC San Diego",
-    "Embedded Systems Researcher — UC San Diego",
-    "Tech Camp Instructor — SCDC"
-  ];
-}</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-down">
-            <a href="#about" aria-label="Scroll to About">
-                <i class="fas fa-arrow-down"></i>
-            </a>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
-        <div class="profile-pic-container" data-aos="fade-up">
-            <img src="assets/images/me.jpg" alt="Marcos De La Torre" class="profile-pic" width="180" height="180" />
-        </div>
-        <div class="about-content" data-aos="fade-up">
-            <div class="about-text">
-                
-                <div class="about-section">
-                    <p>I've found that my best work comes from the projects I'm most passionate about. When I'm fully engaged in a problem, I'm driven to find the most elegant and efficient solution.</p>
-                    <p>I began programming in high school through FIRST Robotics, where I helped design autonomous systems for our competition robots. Our team earned the Innovation in Control and Autonomous awards for work that fused Java, sensor feedback, and PIDF tuning into precise motion control. My proudest achievement wasn’t a trophy—it was reducing autonomous path error by analyzing log data, optimizing Bezier-curve velocity profiles, and characterizing each robot’s friction and voltage behavior until our trajectories ran flawlessly. That early focus on optimization and systems analysis still shapes how I engineer software today.</p>
-                    <p>Since then, I’ve evolved from robotics to full-stack and embedded development, building end-to-end solutions across API, database, and front-end layers. Projects like PantryPal, where I re-architected ChatGPT’s response delivery into streamed, incremental updates for low-latency user experience, and Jack Donuts Rewards App, a Firebase-based loyalty platform for small businesses, strengthened my ability to design scalable, maintainable systems that balance reliability with usability.</p>
-                    <p>At UC San Diego, I served as a Software Engineering Tutor, collaborating across 40+ student codebases to debug Android MVC architectures, construct user stories, and help teams meet deliverables under Agile sprints. The experience reinforced my collaborative instincts and ability to translate complex problems into actionable solutions.</p>
-                    <p>Most recently, as a Tech Camp Instructor for underrepresented high-school students, I led workshops on AI, cybersecurity, and game design—showing new developers that creativity and logic can coexist.</p>
-                    <p>I’m based in Lynwood, California, and approach engineering like an optimization problem: define constraints, iterate relentlessly, and refine until it’s elegant, efficient, and scalable. I thrive on turning late-night curiosity into production-ready systems. I exhaust every resource, ask questions fearlessly, and never stop improving the process behind the product.</p>
-                </div>
-                
-                <div class="resume-link">
-                    <a href="assets/Marcos Resume.pdf" target="_blank" class="resume-btn">
-                        <i class="fas fa-file-alt"></i>
-                        View My Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-        
-        <!-- Jack Donuts Rewards App Featured Project -->
-        <div class="featured-project-card" data-aos="fade-right">
-            <div class="featured-project-image">
-                <img src="assets/images/jackdonuts_ui.png" alt="Jack Donuts Rewards App UI Screenshot" style="max-width: 220px; width: 100%; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);" />
-            </div>
-            <div class="featured-project-content">
-                <h2>Jack Donuts Rewards App</h2>
-                <p style="font-size: 1.1em; margin-bottom: 0.5em;">Developed a cross-platform mobile rewards application using React Native (Expo), Firebase Authentication, and Firestore for secure points tracking. Built internal admin tools for staff to process refund cases and send push notifications for promotions.</p>
-                <ul style="margin-bottom: 1em;">
-                    <li>Implemented a scalable leaderboard system with rate-limited and indexed queries to minimize read costs and prevent abuse under growing user traffic.</li>
-                    <li>Prototyped offline sync capability allowing staff to locally log transactions via CSV during outages, ensuring data integrity and reconciliation once online.</li>
-                    <li>Developed admin tools to handle refunds and deliver push notifications for promotions.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span>React Native</span>
-                    <span>Firebase</span>
-                    <span>Firestore</span>
-                    <span>Mobile App</span>
-                    <span>Cross-Platform</span>
-                    <span>Push Notifications</span>
-                    <span>Offline Sync</span>
-                </div>
-                <div class="project-links" style="margin-top: 1em;">
-                    <a href="#" class="project-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                    <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- PantryPal Featured Project -->
-        <div class="featured-project-card" data-aos="fade-right">
-            <div class="featured-project-image">
-                <img src="assets/images/pantrypal_ui.png" alt="PantryPal UI Screenshot" style="max-width: 220px; width: 100%; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);" />
-            </div>
-            <div class="featured-project-content">
-                <h2>PantryPal</h2>
-                <p style="font-size: 1.1em; margin-bottom: 0.5em;">An AI-powered recipe management platform designed for home cooks and food enthusiasts. PantryPal leverages state-of-the-art AI and voice technology to make meal planning and cooking smarter, faster, and more fun.</p>
-                <ul style="margin-bottom: 1em;">
-                    <li>Integrated <strong>ChatGPT</strong> and <strong>Whisper API</strong> for recipe generation and voice transcription, optimizing delivery with real-time streaming responses that rendered text incrementally to reduce latency and enhance interactivity.</li>
-                    <li>Architected a <strong>MongoDB</strong> backend for scalable recipe retrieval, containerized deployments with <strong>Docker</strong>, and automated testing and CI/CD pipelines using <strong>JUnit</strong> and <strong>GitHub Actions</strong> to maintain build stability across environments.</li>
-                    <li>Managed sprints and issue tracking in <strong>Jira</strong> and coordinated development through <strong>Discord</strong> to sustain delivery velocity.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span>AI Integration</span>
-                    <span>Full Stack</span>
-                    <span>Docker</span>
-                    <span>MongoDB</span>
-                    <span>Agile</span>
-                    <span>JUnit</span>
-                </div>
-                <div class="project-links" style="margin-top: 1em;">
-                    <a href="https://github.com/ucsd-cse110-fa23/cse-110-project-team-14" class="project-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                    <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-grid">
-            <!-- Ray Tracer Game -->
-            <div class="project-card" data-aos="fade-up">
-                <button class="project-close"><i class="fas fa-times"></i></button>
-                <div class="project-image" style="background-image: url('https://sinepost.wordpress.com/wp-content/uploads/2012/06/wolf3d-better.png?w=584');">
-                    <div class="project-overlay">
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Real-Time Ray Casting Engine</h3>
-                    <p class="short-text">
-                        A pseudo-3D ray-casting demo that projects a 2D grid into a first-person view, 
-                        complete with dynamic lighting. <strong>Click to learn more…</strong>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Backend software</p>
+                    <h1>hi, marcos here. 👋</h1>
+                    <p class="lead">
+                        22 year old Backend engineer.  I build Java/Spring + Docker backends, REST APIs, and tools that make systems easier to understand. I love debugging weird bugs, digging into OS and memory details, and turning that knowledge into better backend code.
                     </p>
-                    <div class="tech-stack">
-                        <span>Three.js</span>
-                        <span>WebGL</span>
-                        <span>JavaScript</span>
-                        <span>Physics</span>
+                    <div class="meta">
+                        <span><i class="fa-solid fa-location-dot"></i> Los Angeles, CA - Open to Backend/Full-stack roles</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Marcos-D/ray-casting-engine" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-                <div class="project-expanded-content">
-                    <p class="long-text">
-                        This project adapts classical 2D ray-casting techniques from 
-                        <a href="https://lodev.org/cgtutor/raycasting.html"
-                        target="_blank"
-                        class="raycasting-link">
-                        Lode's Raycasting Tutorial
-                        </a>
-                        to create a pseudo-3D environment. Rays are cast from a camera through a 2D map, 
-                        and walls are projected onto the screen to simulate depth. Dynamic lighting 
-                        further enhances the illusion of three-dimensional space—without requiring 
-                        a full physics engine. Future updates may incorporate more advanced features 
-                        like volumetric effects, interactive objects, or actual 3D physics.
-                      </p>
-                    <div class="project-media">
-                        <!-- <div class="video-wrapper"> -->
-                            <video src="assets/videos/ray-caster.mp4" controls></video>
-                        <!-- </div> -->
-
-
-                    </div>
-                    <div class="project-code">
-                        <pre><code>Algorithm RayCast2DTo3D(grid, camera):
-    For each column x in the screen width:
-        1. Calculate the angle of the ray based on camera direction & x.
-        2. Step through the 2D grid until hitting a wall or max distance.
-        3. Compute distance to wall & project onto the screen:
-                - The closer the wall, the taller the column of pixels.
-        4. Apply lighting or shading based on distance or angle.
-        5. Render the column in the final frame buffer.
-                                  </code></pre>
+                    <div class="cta-row">
+                        <a class="btn primary" href="#" target="_blank" rel="noreferrer">Resume</a>
+                        <a class="btn ghost" href="https://github.com/Marcos-D" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        <a class="btn ghost" href="https://www.linkedin.com/in/marcosdlt/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a class="btn ghost" href="mailto:marcos@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Physics Animation System -->
-            <div class="project-card" data-aos="fade-up">
-                <button class="project-close"><i class="fas fa-times"></i></button>
-                <div class="project-image" style="background-image: url('https://cdn.tutsplus.com/cdn-cgi/image/width=360/cg/uploads/legacy/424_Blender_Rigging_LP_Characters/Preview.jpg');">
-                    <div class="project-overlay">
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>3D Physics & Animation Framework</h3>
-                    <p>Comprehensive physics simulation environment integrating skeletal animation, cloth dynamics, and fluid simulation using OpenGL. Features real-time soft-body deformation and particle system interactions.</p>
-                    <div class="tech-stack">
-                        <span>OpenGL</span>
-                        <span>C++</span>
-                        <span>GLSL</span>
-                        <span>Physics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="https://en.wikipedia.org/wiki/Skeletal_animation" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                    </div>
-                </div>
-                <div class="project-expanded-content">
-                    <div class="model-viewer-container" id="modelViewer"></div>
-                    <div class="project-media">
-                        <div class="model-info">
-                            <h3>Interactive 3D Model</h3>
-                            <p>This model demonstrates the physics engine's capabilities for skeletal animation and real-time deformation.</p>
-                            <ul>
-                                <li>Click and drag to rotate the view</li>
-                                <li>Scroll to zoom in/out</li>
-                                <li>Right-click and drag to pan</li>
-                            </ul>
+                <div class="hero-visual">
+                    <div class="photo-stack">
+                        <div class="photo-card tilt-1">
+                            <img src="assets/images/me.jpg" alt="Marcos outdoors" loading="lazy">
                         </div>
-                    </div>
-                    <script src="3dviewer.js"></script>
-                    <script>
-                        let viewer = null;
-                        const modelPath = 'assets/models/tifa_fbx.fbx';
-
-                        // Prevent click events from bubbling up from the model viewer
-                        const modelViewer = document.getElementById('modelViewer');
-                        if (modelViewer) {
-                            modelViewer.addEventListener('click', (e) => {
-                                e.stopPropagation();
-                            });
-                            modelViewer.addEventListener('pointerdown', (e) => {
-                                e.stopPropagation();
-                            });
-                            modelViewer.addEventListener('mousedown', (e) => {
-                                e.stopPropagation();
-                            });
-                        }
-                    </script>
-                </div>
-            </div>
-
-            <!-- AI Pathfinding -->
-            <div class="project-card" data-aos="fade-up">
-                <button class="project-close"><i class="fas fa-times"></i></button>
-                <div class="project-image" style="background-image: url('https://happycoding.io/tutorials/libgdx/images/pathfinding-12.png');">
-                    <div class="project-overlay"></div>
-                </div>
-                <div class="project-content">
-                    <h3>Game AI & Pathfinding</h3>
-                    <!-- Short teaser text -->
-                    <p class="short-text">
-                        An advanced pathfinding engine featuring classical search algorithms 
-                        (DFS, BFS, UCS, and A*) with dynamic obstacle avoidance. 
-                        <strong>Click to learn more…</strong>
-                      </p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>AI</span>
-                        <span>Algorithms</span>
-                        <span>PyGame</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                    </div>
-                </div>
-
-
-
-                <div class="project-expanded-content">
-
-                    <p class="long-text">
-                        The system leverages proven techniques such as DFS, BFS, UCS, and an 
-                        enhanced A* algorithm—featuring dynamic obstacle avoidance—to compute 
-                        optimal paths efficiently. Constraint-based puzzle solving capabilities 
-                        allow it to handle complex environmental restrictions and movement 
-                        challenges. While grounded in traditional optimization methods, this 
-                        engine lays a solid foundation for intelligent behavior in games and 
-                        offers potential for future integration of adaptive, heuristic-driven 
-                        learning.
-                      </p>
-
-                    <div class="project-media">
-                        <!-- DFS (top-left) -->
-                        <div class="video-container">
-                          <h3>DFS</h3>
-                          <video id="dfsVideo" src="assets/videos/DFS.mp4" controls></video>
+                        <div class="photo-card tilt-2">
+                            <img src="assets/images/me_1.jpg" alt="Marcos portrait" loading="lazy">
                         </div>
-                      
-                        <!-- UCS (top-right) -->
-                        <div class="video-container">
-                          <h3>UCS</h3>
-                          <video id="ucsVideo" src="assets/videos/UCS.mp4" controls></video>
-                        </div>
-                      
-                        <!-- BFS (bottom-left) -->
-                        <div class="video-container">
-                          <h3>BFS</h3>
-                          <video id="bfsVideo" src="assets/videos/BFS.mp4" controls></video>
-                        </div>
-                      
-                        <!-- A* (bottom-right) -->
-                        <div class="video-container">
-                          <h3>A*</h3>
-                          <video id="aStarVideo" src="assets/videos/A_star.mp4" controls></video>
-                        </div>
-                    </div>
-                      
-                      
-                    <div class="project-code-grid">
-                        <!-- DFS Pseudocode -->
-                        <div class="project-code">
-                          <pre><code>
-Algorithm DFS(start, goal):
-    frontier ← stack with start
-    explored ← empty set
-
-    while frontier is not empty:
-        current ← frontier.pop()       // LIFO order
-        if current equals goal:
-            return path from start to current
-
-        mark current as visited (add to explored)
-        for each neighbor of current:
-            if neighbor is within grid bounds 
-            and not an obstacle and not visited:
-                push neighbor to frontier
-                record parent of neighbor as current
-
-    return failure (no path found)
-                          </code></pre>
-                        </div>
-                      
-                        <!-- BFS Pseudocode -->
-                        <div class="project-code">
-                          <pre><code>
-Algorithm BFS(start, goal):
-    frontier ← queue with start
-    explored ← empty set
-
-    while frontier is not empty:
-        current ← frontier.dequeue()   // FIFO order
-        if current equals goal:
-            return path from start to current
-
-        mark current as visited (add to explored)
-        for each neighbor of current:
-            if neighbor is within grid bounds 
-            and not an obstacle and not visited:
-                enqueue neighbor to frontier
-                record parent of neighbor as current
-
-    return failure (no path found)
-                          </code></pre>
-                        </div>
-                      
-                        <!-- UCS Pseudocode -->
-                        <div class="project-code">
-                          <pre><code>
-Algorithm UCS(start, goal):
-    frontier ← priority queue with (cost=0, start)
-    explored ← empty set
-
-    while frontier is not empty:
-        (current_cost, current) ← frontier.pop()  // lowest cost first
-        if current equals goal:
-            return path from start to current w/ total cost current_cost
-
-        mark current as visited (add to explored)
-        for each neighbor of current:
-            if neighbor is within grid bounds 
-            and not an obstacle and not visited:
-                new_cost ← current_cost + cost(neighbor)
-                add (new_cost, neighbor) to frontier
-                record parent of neighbor as current
-
-    return failure (no path found)
-                          </code></pre>
-                        </div>
-                      
-                        <!-- A* Pseudocode -->
-                        <div class="project-code">
-                          <pre><code>Algorithm A*(start, goal):
-    Define h(n) as the heuristic
-    frontier ← priority queue with (f = h(start), g = 0, start)
-    explored ← empty set
-
-    while frontier is not empty:
-        // pop lowest f first
-        (current_f, current_g, current) ← frontier.pop() 
-        if current equals goal:
-            return path from start to current with total cost current_g
-
-        mark current as visited (add to explored)
-        for each neighbor of current:
-            if neighbor is within grid bounds 
-            and not an obstacle and not visited:
-                new_g ← current_g + cost(neighbor)
-                new_f ← new_g + h(neighbor)
-                add (new_f, new_g, neighbor) to frontier
-                record parent of neighbor as current
-
-    return failure (no path found)
-                      
-                          return failure (no path found)
-                          </code></pre>
-                        </div>
-                      </div>
-                </div>
-            </div>
-
-            <!-- USSV & Kitta Drone Project -->
-            <div class="project-card" data-aos="fade-up" onclick="openModal('drone')">
-                <div class="project-image" style="background-image: url('assets/images/ussv-kita.png');">
-                    <div class="project-overlay"></div>
-                </div>
-                <div class="project-content">
-                    <h3>Avanti Technologies CARPA USSV & Kitta Drone</h3>
-                    <p class="short-text">Developed a dual-system solution: an autonomous submarine (Narwhal) and a delivery drone (Kitta) for environmental data collection in simulated enemy territories. <strong>Click to learn more…</strong></p>
-                    <p class="long-text">
-                        Engineered two autonomous vehicles working in tandem: the Narwhal submarine and Kitta delivery drone. The Narwhal, powered by Arduino Uno, features a tail-propelled propulsion system and collects environmental data (pH, temperature, humidity) in target water bodies. The Kitta drone serves as the delivery platform, featuring a custom lightweight flight controller capable of handling payloads up to ~4 lbs. Key achievements include:
-                        • Designed power control circuitry using dual-channel H-bridge motor drivers for autonomous switching and reversible motion
-                        • Implemented environmental sensor integration for real-time data collection
-                        • Developed a lightweight flight control system for stable drone delivery with one-axis propulsion
-                    </p>
-                    <div class="tech-stack">
-                        <span>Arduino</span>
-                        <span>Robotics</span>
-                        <span>Sensors</span>
-                        <span>Flight Control</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="github-link" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="documentation-link" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FRC Autonomous Robotics Platform -->
-            <div class="project-card" data-aos="fade-up" onclick="openModal('robotics')">
-                <div class="project-image" style="background-image: url('assets/images/frc-robot.png');">
-                    <div class="project-overlay"></div>
-                </div>
-                <div class="project-content">
-                    <h3>FRC Autonomous Robotics Platform</h3>
-                    <p class="short-text">Developed embedded logic for drivetrain and mechanism control using PIDF controllers and spline trajectory planning. <strong>Click to learn more…</strong></p>
-                    <p class="long-text">
-                        Led the autonomous programming team in developing sophisticated control systems for our FRC robot. Implemented advanced PIDF controllers for precise drivetrain control and mechanism operations. Integrated Time-of-Flight (ToF) sensors to achieve accurate odometry, enabling complex autonomous routines. The system features real-time telemetry for performance monitoring and dynamic trajectory adjustments, resulting in consistent autonomous performance during competitions.
-                    </p>
-                    <div class="tech-stack">
-                        <span>PIDF Controllers</span>
-                        <span>ToF Sensors</span>
-                        <span>Telemetry</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="github-link" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="documentation-link" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thermoelectric Cooling System Optimization -->
-            <div class="project-card" data-aos="fade-up" onclick="openModal('thermoelectric')">
-                <div class="project-image" style="background-image: url('assets/images/arduino-tec.jpg');">
-                    <div class="project-overlay"></div>
-                </div>
-                <div class="project-content">
-                    <h3>Thermoelectric Cooling System Optimization</h3>
-                    <p class="short-text">Conducted research on current ramp delivery for a TEC module, improving performance by modifying L293D H-bridge driver configurations. <strong>Click to learn more…</strong></p>
-                    <p class="long-text">
-                        Developed an optimized control system for Thermoelectric Cooling (TEC) modules using Arduino-based current ramping techniques. The project focused on enhancing cooling efficiency through precise H-bridge driver control. Implemented data logging with Logger Pro to analyze thermal response curves, leading to significant improvements in heating/cooling cycle times. The system features adaptive current control based on real-time temperature feedback, maximizing performance under varying load conditions.
-                    </p>
-                    <div class="tech-stack">
-                        <span>TEC Modules</span>
-                        <span>H-Bridge Drivers</span>
-                        <span>Oscilloscope</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="github-link" class="project-btn"><i class="fab fa-github"></i> View Code</a>
-                        <a href="documentation-link" class="project-btn"><i class="fas fa-external-link-alt"></i> Documentation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="more-projects" data-aos="fade-up">
-            <button class="more-projects-btn" onclick="toggleMoreProjects()">
-                <span>View More Projects</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            
-            <div class="additional-projects">
-                <div class="project-card disabled" data-aos="fade-up">
-                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
-                        <div class="project-overlay">
-                            <span class="coming-soon">Coming Soon</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>NachOS Operating System</h3>
-                        <p>Built key components of a custom OS using NachOS framework, implementing process management, memory handling, and synchronization mechanisms.</p>
-                        <div class="tech-stack">
-                            <span>C++</span>
-                            <span>OS</span>
-                            <span>Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card disabled" data-aos="fade-up">
-                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
-                        <div class="project-overlay">
-                            <span class="coming-soon">Coming Soon</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Bayesian Room Occupancy</h3>
-                        <p>Real-time room occupancy detection using probabilistic modeling and Bayesian inference, processing environmental sensor data for smart building applications.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Bayesian</span>
-                            <span>ML</span>
+                        <div class="photo-card tilt-3">
+                            <img src="assets/images/me.jpg" alt="Marcos outdoors" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <h2 class="section-title" data-aos="fade-up">Technical Arsenal</h2>
-        <div class="skills-content">
-            <div class="skills-category" data-aos="fade-up">
-                <h3>Skills</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <i class="fas fa-layer-group"></i>
-                        <span>Full Stack</span>
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab active" data-tab="work">Work</button>
+                    <button class="tab" data-tab="education">Education</button>
+                </div>
+
+                <div class="tab-panel active" id="work">
+                    <div class="timeline">
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><img src="assets/images/ucsd.png" alt="UCSD logo"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">Dec 2023 - Mar 2025</div>
+                                <h3>UC San Diego - Software Engineering Tutor (CSE 110)</h3>
+                                <p class="subdued">Java / OOP / Testing / Git / Logs & Debugging</p>
+                                <ul>
+                                    <li>Supported ~200+ students per quarter across Java, testing, and design reviews.</li>
+                                    <li>Debugged student projects by reading logs, stepping through code, and clarifying requirements.</li>
+                                    <li>Partnered with instructors on labs, demos, and exam proctoring.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><img src="assets/images/ucsd.png" alt="UCSD logo"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">Feb 2025 - Jun 2025</div>
+                                <h3>UC San Diego - Embedded Systems Researcher</h3>
+                                <p class="subdued">Microcontrollers / Thermal control / H-bridges / LabVIEW / Oscilloscope</p>
+                                <ul>
+                                    <li>Developed and validated firmware-driven thermal control systems using microcontrollers, H-bridge drivers, and real-time sensor feedback for medical and haptic purposes.</li>
+                                    <li>Conducted systematic tests on thermal response, control-loop latency, and signal integrity using LabVIEW, oscilloscopes, and multimeters to reproduce edge-case failures and improve stability in long-duration operation by ~30%.</li>
+                                    <li>Collaborated with faculty to diagnose performance bottlenecks and refine reliability across sensing and actuation pathways.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><img src="assets/images/scdc.png" alt="SCDC logo"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">Jun 2025 - Sep 2025</div>
+                                <h3>SCDC - Tech Camp Instructor</h3>
+                                <p class="subdued">Project-based teaching / Java / Security basics / Los Angeles, CA</p>
+                                <ul>
+                                    <li>Designed and taught project-based courses (Java games, AI/ML, cybersecurity).</li>
+                                    <li>Built demo apps and lesson material to explain algorithms and systems concepts.</li>
+                                </ul>
+                            </div>
+                        </article>
                     </div>
-                    <div class="skill-item">
-                        <i class="fas fa-server"></i>
-                        <span>System Design</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-database"></i>
-                        <span>Databases</span>
+                </div>
+
+                <div class="tab-panel" id="education">
+                    <div class="timeline">
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><img src="assets/images/ucsd.png" alt="UCSD logo"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">San Diego, CA</div>
+                                <h3>UC San Diego - B.S. Computer Engineering</h3>
+                                <p class="subdued">Algorithms & Data Structures, Computer Security, Operating Systems (Multithreading, CPU Architecture), Computer Networks (TCP/IP, Routing), Software Engineering, AI & Machine Learning (CNNs, Reinforcement Learning, Pathfinding, Probabilistic Models), Databases.</p>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><img src="assets/images/cams.jpeg" alt="CAMS logo"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">4.45 GPA (unweighted)</div>
+                                <h3>California Academy of Mathematics and Science</h3>
+                                <p class="subdued">FIRST Robotics Team 687 The Nerd Herd - Innovation in Control (2019), Autonomous (2019), Regional Finalist (2018), Quality Award (2021); Chess Club; Intramural Soccer AA champion.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-            
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>Languages</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>C++</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-java"></i>
-                        <span>Java</span>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title fancy">Featured Projects</h2>
+                    <a class="text-link" href="projects.html">view more -></a>
+                </div>
+                <div class="card-grid featured">
+                    <article class="card project-card">
+                        <div class="project-thumb gradient-thumb">
+                            <div class="thumb-label">CourseCircle</div>
+                        </div>
+                        <div class="card-header">
+                            <h3>CourseCircle - Study-sharing platform</h3>
+                            <div class="badge-row">
+                                <span class="badge">Java</span>
+                                <span class="badge">Spring Boot</span>
+                                <span class="badge">PostgreSQL</span>
+                                <span class="badge">Docker</span>
+                                <span class="badge">REST APIs</span>
+                            </div>
+                        </div>
+                        <p>Built backend for creating/joining study sessions and storing resources with a layered controller-service-repository design.</p>
+                        <p>Containerized with Docker for reproducible development and deployment.</p>
+                        <div class="link-row">
+                            <a class="btn ghost" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                            <a class="btn ghost" href="https://github.com/Marcos-D" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </article>
+                    <article class="card project-card">
+                        <div class="project-thumb">
+                            <img src="assets/images/pantrypal_ui.png" alt="PantryPal UI" loading="lazy" style="object-fit: contain; padding: 12px; background: #0f141d;">
+                        </div>
+                        <div class="card-header">
+                            <h3>PantryPal - AI-powered recipe assistant</h3>
+                            <div class="badge-row">
+                                <span class="badge">Java backend</span>
+                                <span class="badge">REST API</span>
+                                <span class="badge">Docker</span>
+                                <span class="badge">MongoDB</span>
+                                <span class="badge">Firestore</span>
+                            </div>
+                        </div>
+                        <p>Implemented backend endpoints for managing ingredients, recipes, and AI-generated suggestions behind a clean internal API.</p>
+                        <p>Added logging and tests to debug failures as external AI APIs evolved.</p>
+                        <div class="link-row">
+                            <a class="btn ghost" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                            <a class="btn ghost" href="https://github.com/ucsd-cse110-fa23/cse-110-project-team-14" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contributions" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title fancy">Recent Contributions</h2>
+                    <a class="text-link" href="https://github.com/Marcos-D?tab=overview&from=2025-01-01&to=2025-12-31" target="_blank" rel="noreferrer">more on GitHub -></a>
+                </div>
+                <div class="card-grid compact">
+                    <article class="card small-card">
+                        <h5>Dolphin Emulator - Add Apploader Date column</h5>
+                        <p>Exposed parsed apploader date in the game list with new column enum, toggles, sorting, and persisted visibility.</p>
+                        <a class="text-link" href="https://github.com/dolphin-emu/dolphin/pull/14196" target="_blank" rel="noreferrer">View pull request</a>
+                    </article>
+                    <article class="card small-card">
+                        <h5>raylib - Fix modulo bias in GetRandomValue</h5>
+                        <p>Replaced modulo-based RNG fallback with rejection sampling to remove bias; documented analysis and tests.</p>
+                        <a class="text-link" href="https://github.com/raysan5/raylib/pull/5392" target="_blank" rel="noreferrer">View pull request</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="card contact-card">
+                    <p>wanna grab a coffee or chat technology? reach out here.</p>
+                    <div class="cta-row">
+                        <a class="btn primary" href="mailto:marcos@example.com">Email</a>
+                        <a class="btn ghost" href="https://github.com/Marcos-D" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        <a class="btn ghost" href="https://www.linkedin.com/in/marcosdlt/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
                 </div>
             </div>
-
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-                <h3>Tools & Technologies</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <i class="fab fa-docker"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-infinity"></i>
-                        <span>CI/CD</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
-        <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
-            <div class="contact-text">
-                <p>Interested in collaboration or want to discuss a project? Let's connect!</p>
-            </div>
-            <div class="contact-links">
-                <a href="https://github.com/Marcos-D" target="_blank" class="contact-btn">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/marcosdlt/" target="_blank" class="contact-btn">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://www.instagram.com/marcossh.d/" target="_blank" class="contact-btn">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 | Marcos De La Torre Portfolio</p>
+        <div class="container footer-content">
+            <p>&copy; 2025 | Marcos De La Torre</p>
             <div class="footer-links">
+                <a href="#home">Home</a>
                 <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ogl/dist/ogl.umd.js"></script>
-    <script type="module" src="script.js" defer></script>
-    <script src="aurora.js" defer></script>
-
-    
+    <script src="script.js"></script>
 </body>
 </html>
+
+
