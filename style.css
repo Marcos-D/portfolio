@@ -484,6 +484,17 @@ ul li::before {
     box-shadow: var(--shadow);
 }
 
+.placeholder-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.2));
+}
+
 .project-thumb img {
     width: 100%;
     height: 100%;
